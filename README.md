@@ -2,14 +2,50 @@
 
 Reflect repositories into Notion and integrate them with Linear tracks. Built for AI agents to maintain unified project visibility across Git, Linear, and Notion.
 
-## Why Notion Skill
+## Quick Start
 
-Managing projects across multiple tools creates fragmentation:
-- **Git** has commits and branches
-- **Linear** has issues and projects
-- **Notion** has documentation and databases
+### 1. Run the Setup Wizard (Recommended)
 
-The Notion Skill bridges these tools by automatically reflecting repository structure, conductor tracks, and Linear project data into unified Notion databases for complete visibility.
+```bash
+cd notion-skill
+python scripts/setup_wizard.py
+```
+
+The wizard will guide you through:
+- Creating Notion integration
+- Getting Linear API key
+- Configuring database IDs
+- Testing connections
+
+### 2. Or Manual Setup
+
+```bash
+# Copy environment template
+cp .env.example .env
+
+# Edit with your API keys
+# NOTION_API_KEY=...
+# LINEAR_API_KEY=...
+# NOTION_REPOSITORIES_DB_ID=...
+```
+
+See [docs/NOTION_SETUP.md](docs/NOTION_SETUP.md) for detailed setup instructions.
+
+### 3. Run Initial Sync
+
+```bash
+# Preview mode first
+python scripts/reflect_repo.py . --preview
+
+# Then actual sync
+python scripts/reflect_repo.py .
+```
+
+### 4. Interactive Dashboard
+
+```bash
+python scripts/interactive_cli.py
+```
 
 ## Features
 
