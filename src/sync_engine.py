@@ -15,11 +15,19 @@ from typing import Dict, List, Any, Optional
 from datetime import datetime
 from pathlib import Path
 
-from .notion_client import NotionClient
-from .linear_client import LinearClient
-from .git_analyzer import GitAnalyzer
-from .track_parser import TrackParser
-from .incremental_sync import IncrementalSyncManager, SyncState, ChangeSet
+# Support both relative and absolute imports
+try:
+    from .notion_client import NotionClient
+    from .linear_client import LinearClient
+    from .git_analyzer import GitAnalyzer
+    from .track_parser import TrackParser
+    from .incremental_sync import IncrementalSyncManager, SyncState, ChangeSet
+except ImportError:
+    from notion_client import NotionClient
+    from linear_client import LinearClient
+    from git_analyzer import GitAnalyzer
+    from track_parser import TrackParser
+    from incremental_sync import IncrementalSyncManager, SyncState, ChangeSet
 
 logger = logging.getLogger(__name__)
 
