@@ -1,0 +1,20 @@
+{
+  "enabled": true,
+  "linearProjectId": "",
+  "linearTeamId": "",
+  "syncFrequency": "on-commit",
+  "includeArchivedTracks": true,
+  "syncLinearIssues": true,
+  "syncCycles": false,
+  "customFieldMappings": {},
+  "excludedPaths": [
+    "node_modules",
+    ".git",
+    "dist",
+    "build"
+  ],
+  "webhooks": {
+    "onSyncComplete": "",
+    "onError": ""
+  }
+}
